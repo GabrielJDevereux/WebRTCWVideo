@@ -298,6 +298,129 @@
 			</span>
 		</span>
 		<div id="mainmenu" class="row" style="opacity: 0;">
+			<div id="container-1" title="Add Group Chat to OBS"  alt="Add Group Chat to OBS" tabindex="1" role="button" aria-pressed="false" onkeyup="enterPressedClick(event,this);" class="column columnfade pointer rounded card" style=" overflow-y: auto;">
+				
+				<h2>
+					<span data-translate="add-group-chat">Create a MultiView</span>
+				</h2>
+				<div class="container-inner">
+					<br />
+					<br />
+					<span data-translate="rooms-allow-for">Rooms allow for group-chat and the tools to manage multiple guests.</span>
+					<br />
+					<br />
+					
+					<table >
+					 <tr>
+						<th style="text-align:right;" class="labelLarge">
+							<b>
+							<span data-translate="room-name">Room Name</span>: 
+							</b>
+						</th>
+						<th class="labelSmall"></th>
+						<th style="text-align:left;" >
+							<div class="labelSmall">
+								<b>
+									<span data-translate="room-name">Room Name</span>: 
+								</b>
+							</div>
+							<input type="text" autocorrect="off" autocapitalize="none"  id="videoname1" placeholder="Enter a room name here" onkeydown="checkStrengthRoom(event, 'securityLevelRoom');" onchange="checkStrengthRoom(event, 'securityLevelRoom');" onkeyup="enterPressed(event, createRoom);" maxlength="30" style="max-width: 431px;width: 100%;font-size: 110%; padding: 5px;" />
+							<button ontouchstart="getById('videoname1').value = session.generateRandomString();getById('securityLevelRoom').style.display='none';" onmousedown="getById('videoname1').value = session.generateRandomString();getById('securityLevelRoom').style.display='none';" title="Generate a random room name" class="randomRoomName"><i class="las la-random"></i></button>
+							<div id="securityLevelRoom" style="display:none;margin-top:3px;position:relative;top:3px;font-size:0.8em;"></div>
+						</th>
+						
+					</tr><tr>
+					
+						<th style="text-align:right;" class="labelLarge">
+							<b>
+								<span data-translate="password-input-field">Password</span>: 
+							</b>
+						</th>
+						<th class="labelSmall"></th>
+						<th  style="text-align:left;">
+							<div class="labelSmall">
+								<b>
+									<span data-translate="password-input-field">Password</span>: 
+								</b>
+							</div>
+							<input type="text" autocorrect="off" autocapitalize="none" id="passwordRoom" placeholder="Optional room password here" onkeydown="checkStrengthRoom(event, 'securityLevelRoom');" onchange="checkStrengthRoom(event, 'securityLevelRoom');"  onkeyup="enterPressed(event, createRoom);" style="max-width: 431px;width: 100%;font-size: 110%; padding: 5px;" />
+						</th>
+					
+					</tr><tr >
+					
+						<th style="text-align:right; padding: 5px; padding-top: 20px;">
+							<input id="broadcastFlag" type="checkbox" title="For large group rooms, this option can reduce the load on remote guests substantially" />
+						</th><th style="text-align:left;; padding-top: 20px;">
+						<b>
+							<span data-translate="guests-only-see-director"  style="cursor: help;" title="For large group rooms, this option can reduce the load on remote guests substantially" >The guests can see the director, but not other guests' videos</span>
+						</b>
+						</th>	
+					</tr><tr>
+					
+						<th style="text-align:right; padding: 5px;; padding-bottom: 20px;">
+							<input id="showdirectorFlag" type="checkbox" title="The director will be visible in scenes as if a performer themselves." />
+						</th><th style="text-align:left;; padding-bottom: 20px;">
+						<b>
+							<span data-translate="scenes-can-see-director" style="cursor: help;" title="If checked, the director can be added to scenes as if a guest. Otherwise, the director will never appear in a scene." >The director will be performing as well, appearing in group scenes</span>
+						</b>
+						</th>	
+					</tr><tr>
+						<th style="text-align:right; padding: 5px;">
+							
+						</th>
+						<th style="text-align:left;">
+							<b>
+								<span data-translate="default-codec-select" title="Which video codec would you want used by default?" >Preferred Video Codec:  </span> 
+								<select style="font-size:1.1em" id="codecGroupFlag" type="checkbox" title="For large group rooms, this option can reduce the load on remote guests substantially" >
+									<option value="default" selected>Default</option>
+									<option value="vp9">VP9</option>
+									<option value="h264">H264</option>
+									<option value="vp8">VP8</option>
+									<option value="av1">AV1</option>
+								</select >
+							</b>
+						</th>
+						
+					</tr>
+					</table>
+					
+					<span style="margin: 0 auto; width: 470px; max-width:100%;display: block;">
+						<button onclick="createRoom()"  class="gobutton gowebcam" style="width:100%;" alt="Enter the room as the group's director" title="You'll enter as the room's director">
+							<span data-translate="enter-the-rooms-control">Enter the room's Control Center in the director's role</span>
+						</button>
+						<br />
+						<button class="roomnotes" style="display: block;" onclick="toggle(document.getElementById('roomnotes'),this);">
+							<span data-translate="show-tips">Show me some tips..</span>
+						</button>
+						
+						<ul style="max-width: 500px; display: none; text-align: left;" class="roomnotes" id="roomnotes">
+							<span data-translate="added-notes" >
+								<i>Important Tips:</i>
+								<br><br>
+								<li>Disabling video sharing between guests will improve performance</li>
+								<li>Invite only guests to the room that you trust.</li>
+								<li>The "Recording" option is considered experimental.</li>
+								<li><a href="https://params.vdo.ninja" style="color:black;"><u>Advanced URL parameters</u></a> are available to customize rooms.</li>
+							</span>
+						</ul>
+						<br />
+						<br />
+						<i data-translate="looking-to-just-chat-and-not-direct">Looking to just chat and not direct?</i>
+						<br />
+						<br />
+						<button onclick="jumptoroom2()" class="gobutton gowebcam" style="width:100%;" alt="Enter the room as the group's director" title="You'll enter as the room's director">
+							<span data-translate="join-the-room-basic">Join the room as a Participant, rather than a director</span>
+						</button>
+					</span>
+				</div>
+				<div class="outer close">
+					<div class="inner">
+						<label class="labelclass">
+							<span data-translate="back">Back</span>
+						</label>
+					</div>
+				</div>
+		</div>
 			<div id="container-3"  title="Add your Camera to OBS" onkeyup="enterPressedClick(event,this);"  alt="Add your Camera to OBS" tabindex="1" role="button" aria-pressed="false" class="column columnfade pointer rounded card" onclick="previewWebcam()" style=" overflow-y: auto;">
 				<h2 id="add_camera">
 					<span data-translate="add-your-camera">Add your Camera to OBS</span>
