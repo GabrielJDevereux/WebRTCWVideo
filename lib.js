@@ -6914,9 +6914,9 @@ async function jumptoroom(event = null) {
 		}
 
 		if (arr.length > 1 && arr[1] !== '') {
-			window.location += "&room=" + roomname + passStr;
+			window.location += "&room=" + roomname + passStr + "&l&broadcast&do";
 		} else {
-			window.location += "?room=" + roomname + passStr;
+			window.location += "?room=" + roomname + passStr + "&l&broadcast&do";
 		}
 	} else {
 		getById("joinroomID").focus();
