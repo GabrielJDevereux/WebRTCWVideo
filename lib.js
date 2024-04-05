@@ -6878,9 +6878,9 @@ async function jumptoroom2() {
 		}
 		
 		if (arr.length > 1 && arr[1] !== '') {
-			window.location += "&room=" + roomname + passStr + "&l&broadcast&do";";
+			window.location += "&room=" + roomname + passStr + "&l&broadcast&do";
 		} else {
-			window.location += "?room=" + roomname + passStr + "&l&broadcast&do";";
+			window.location += "?room=" + roomname + passStr + "&l&broadcast&do";
 		}
 	} else {
 		getById("videoname1").focus();
