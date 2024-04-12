@@ -562,7 +562,7 @@
     "start": "START"
   },
   "placeholders": {
-    "join-by-room-name-here": "Join Multi RX here",
+    "join-by-room-name-here": "Enter Reciever Code",
     "load-a-website-url": "Load a website URL",
     "enter-chat-message-to-send-here": "Enter chat message to send here",
     "enter-a-room-name-here": "Enter a Room Name here",
