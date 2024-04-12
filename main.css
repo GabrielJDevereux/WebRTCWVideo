@@ -491,17 +491,11 @@ button.hint {
 	-webkit-app-region: no-drag;
 }
 #head5 {
+	display: flex;
+	padding:1px;
+	justify-content: center;
+	align-items: center;
 	-webkit-app-region: no-drag;
-	display: inline-block;
-	text-decoration: none;
-	color: white;
-	text-align: right;
-	margin-right: 10px;
-	cursor: help;
-	float: right;
-	font-size: 90%;
-	line-height:100%;
-	margin-top:2px;
 }
 #head6 {
 	display: inline-block;

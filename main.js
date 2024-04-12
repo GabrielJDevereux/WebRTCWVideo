@@ -43,6 +43,9 @@ async function main(){ // main asyncronous thread; mostly initializes the user s
 			getById("mainmenu").style.opacity = 1;
 		}
 	}
+	if (location.hostname === "video.il.vision") {
+		getById("mainmenu").classList.add("hidden");
+	}
 	if (location.hostname !== "vdo.ninja" && location.hostname !== "backup.vdo.ninja" && location.hostname !== "proxy.vdo.ninja" && location.hostname !== "obs.ninja") {
 		
 		errorReport = false;
@@ -138,6 +141,7 @@ async function main(){ // main asyncronous thread; mostly initializes the user s
 	if (urlParams.has('director') || urlParams.has('dir')) {
 		session.director = urlParams.get('director') || urlParams.get('dir') || session.roomid || urlParams.get('roomid') || urlParams.get('r') || urlParams.get('room') || filename || true;
 		session.effect = null; // so the director can see the effects after a page refresh
+		getById("head5").classList.add('hidden')
 		getById("avatarDiv3").classList.remove("hidden"); // lets the director see the avatar option
 	}
 	
@@ -652,6 +656,8 @@ async function main(){ // main asyncronous thread; mostly initializes the user s
 	
 	if (urlParams.has('broadcast') || urlParams.has('bc')) {
 		log("Broadcast flag set");
+		getById("head5").classList.add('hidden')
+		getById("mainmenu").classList.remove('hidden')
 		session.broadcast = urlParams.get('broadcast') || urlParams.get('bc') || null;
 		
 		if (session.broadcast === "false") {
