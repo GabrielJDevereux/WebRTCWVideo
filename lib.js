@@ -6925,6 +6925,76 @@ async function jumptoroom(event = null) {
 	}
 }
 
+async function jumptoroom10(event = null) {
+
+	if (event) {
+		if (event.which !== 13) {
+			return;
+		}
+	}
+
+	var arr = window.location.href.split('?');
+	var roomname = getById("joinroomID").value;
+	roomname = sanitizeRoomName(roomname);
+	if (roomname.length) {
+
+		var passStr = "";
+		window.focus();
+		var pass = await promptAlt(getTranslation("enter-password-if-desired"), false, true); //sanitizePassword(session.password);
+		if (pass && pass.length) {
+			session.password = sanitizePassword(pass);
+			passStr = "&password=" + session.password;
+		} else {
+			session.password = false;
+		}
+
+		if (arr.length > 1 && arr[1] !== '') {
+			window.location += "&scene&room=" + roomname + passStr;
+		} else {
+			window.location += "?scene&room=" + roomname + passStr;
+		}
+	} else {
+		getById("joinroomID").focus();
+		getById("joinroomID").classList.remove("shake");
+		setTimeout(function(){getById("joinroomID").classList.add("shake");},10);
+	}
+}
+
+async function jumptoroom11(event = null) {
+
+	if (event) {
+		if (event.which !== 13) {
+			return;
+		}
+	}
+
+	var arr = window.location.href.split('?');
+	var roomname = getById("joinroomID").value;
+	roomname = sanitizeRoomName(roomname);
+	if (roomname.length) {
+
+		var passStr = "";
+		window.focus();
+		var pass = await promptAlt(getTranslation("enter-password-if-desired"), false, true); //sanitizePassword(session.password);
+		if (pass && pass.length) {
+			session.password = sanitizePassword(pass);
+			passStr = "&password=" + session.password;
+		} else {
+			session.password = false;
+		}
+
+		if (arr.length > 1 && arr[1] !== '') {
+			window.location += "&director=" + roomname + passStr;
+		} else {
+			window.location += "?director=" + roomname + passStr;
+		}
+	} else {
+		getById("joinroomID").focus();
+		getById("joinroomID").classList.remove("shake");
+		setTimeout(function(){getById("joinroomID").classList.add("shake");},10);
+	}
+}
+
 
 async function jumptoURL(event = null) {  // this is for the native app
 
