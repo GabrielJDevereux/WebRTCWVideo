@@ -477,19 +477,16 @@ button.hint {
 	color: #e0dfdf;
 }
 #header {
-	padding: 50px;
-	margin: 0;
+	width: 100%;
+	padding: 1px;
 	background-color: #000000;
-	color: #ffffff;
+	color: #FFF;
 	-webkit-app-region: drag;
-	
 }
 #head1{
-	display: flex;
-	justify-content: center;
-	align-items: center;
+	display: inline-block;
 	padding:1px;
-	padding-left:1px;
+	position: relative;
 	-webkit-app-region: no-drag;
 }
 #head5 {
@@ -1667,7 +1664,6 @@ body.darktheme{
 }
 #mainmenu {
 	height:100vh;
-	padding-top: 75;
 }
 .mainmenuclass {
 	display: inline-block;
@@ -4038,21 +4034,10 @@ a#reshare {
 
 #joinroomID {
 	border-radius: 0;
-	padding: 40px;
-	font-size: 50px;
-	text-align: center;
+	padding: 5px;
 }
 #joinroomID+button {
 	margin: 0px var(--regular-margin);
-	font-size: 50px;
-	text-align: center;
-}
-
-#jumptoroomButton {
-	border-radius: 0;
-	padding: 40px;
-	font-size: 50px;
-	text-align: center;
 }
 
 #joinbyURL {
@@ -4068,7 +4053,7 @@ a#reshare {
 }
 
 .appmode #joinbyURL+button {
-	width: 10px;
+	width: 110px;
 }
 
 #guestTips {

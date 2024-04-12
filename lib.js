@@ -5161,7 +5161,7 @@ function updateMixerRun(e=false){  // this is the main auto-mixing code.  It's a
 				}
 			} else if (mediaPool.length==9){
 				if (posCount==0+4){
-					customLayout[mediaPool[i].dataset.sid] = {"x":0o0,"y":0,"w":20,"h":20, "c":true};
+					customLayout[mediaPool[i].dataset.sid] = {"x":00,"y":0,"w":20,"h":20, "c":true};
 				} else if (posCount==1+4){
 					customLayout[mediaPool[i].dataset.sid] = {"x":20,"y":0,"w":20,"h":20, "c":true};
 				} else if (posCount==2+4){
@@ -6925,76 +6925,6 @@ async function jumptoroom(event = null) {
 	}
 }
 
-async function jumptoroom10(event = null) {
-
-	if (event) {
-		if (event.which !== 13) {
-			return;
-		}
-	}
-	var myurl = "video.il.vision"
-
-	var arr = window.location.myurl.split('?');
-	var roomname = getById("joinroomID").value;
-	roomname = sanitizeRoomName(roomname);
-	if (roomname.length) {
-
-		var passStr = "";
-		window.focus();
-		var pass = await promptAlt(getTranslation("enter-password-if-desired"), false, true); //sanitizePassword(session.password);
-		if (pass && pass.length) {
-			session.password = sanitizePassword(pass);
-			passStr = "&password=" + session.password;
-		} else {
-			session.password = false;
-		}
-
-		if (arr.length > 1 && arr[1] !== '') {
-			window.location += "&scene&room=" + roomname + passStr + "";
-		} else {
-			window.location += "?scene&room=" + roomname + passStr + "";
-		}
-	} else {
-		getById("joinroomID").focus();
-		getById("joinroomID").classList.remove("shake");
-		setTimeout(function(){getById("joinroomID").classList.add("shake");},10);
-	}
-}
-
-async function jumptoroom11(event = null) {
-
-	if (event) {
-		if (event.which !== 13) {
-			return;
-		}
-	}
-
-	var arr = window.location.href.split('?');
-	var roomname = getById("joinroomID").value;
-	roomname = sanitizeRoomName(roomname);
-	if (roomname.length) {
-
-		var passStr = "";
-		window.focus();
-		var pass = await promptAlt(getTranslation("enter-password-if-desired"), false, true); //sanitizePassword(session.password);
-		if (pass && pass.length) {
-			session.password = sanitizePassword(pass);
-			passStr = "&password=" + session.password;
-		} else {
-			session.password = false;
-		}
-
-		if (arr.length > 1 && arr[1] !== '') {
-			window.location += "&director=" + roomname + passStr + "";
-		} else {
-			window.location += "?director=" + roomname + passStr + "";
-		}
-	} else {
-		getById("joinroomID").focus();
-		getById("joinroomID").classList.remove("shake");
-		setTimeout(function(){getById("joinroomID").classList.add("shake");},10);
-	}
-}
 
 async function jumptoURL(event = null) {  // this is for the native app
 
@@ -42303,7 +42233,7 @@ function addEventToAll(targets, trigger, callback) { // js helper
 function insertAfter(newNode, existingNode) {
     existingNode.parentNode.insertBefore(newNode, existingNode.nextSibling);
 }
-addEventToAll("", 'click', function(e, ele) {
+addEventToAll(".column", 'click', function(e, ele) {
 	if (ele.classList.contains("skip-animation")) {
 		return;
 	}
