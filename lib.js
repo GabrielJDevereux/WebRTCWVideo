@@ -6932,8 +6932,9 @@ async function jumptoroom10(event = null) {
 			return;
 		}
 	}
+	var myurl = "video.il.vision"
 
-	var arr = window.location.href.split('?');
+	var arr = window.location.myurl.split('?');
 	var roomname = getById("joinroomID").value;
 	roomname = sanitizeRoomName(roomname);
 	if (roomname.length) {
@@ -6949,9 +6950,9 @@ async function jumptoroom10(event = null) {
 		}
 
 		if (arr.length > 1 && arr[1] !== '') {
-			window.location += "&scene=" + roomname + passStr + "";
+			window.location += "&scene&room=" + roomname + passStr + "";
 		} else {
-			window.location += "?scene=" + roomname + passStr + "";
+			window.location += "?scene&room=" + roomname + passStr + "";
 		}
 	} else {
 		getById("joinroomID").focus();
